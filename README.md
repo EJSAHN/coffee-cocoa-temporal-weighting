@@ -8,12 +8,33 @@ The main entry point performs source verification, panel preparation, event reco
 
 Python 3.10 or later and NumPy 2.2 or later in the 2.x series. Figure-rendering code and plotting dependencies are excluded from this distribution. Commands do not install packages, change an environment or download data. The requirements file describes the distribution's dependencies.
 
+## Published code and empirical inputs
+
+[Release v2.0.0](https://github.com/EJSAHN/coffee-cocoa-temporal-weighting/releases/tag/v2.0.0) provides the source-code snapshot at commit `fadb680320df628e449d1f2e45292d40e0b62462` and the separate [empirical-input ZIP](https://github.com/EJSAHN/coffee-cocoa-temporal-weighting/releases/download/v2.0.0/coffee_cocoa_empirical_inputs_v2.zip) (38,759,041 bytes). Download the code and data separately; GitHub's automatically generated source-code archives contain code only.
+
+The input ZIP contains `raw_inputs/` with ten preserved production, climate, cohort, geographic and event-design files, plus `source_manifest.json`. Its ten input hashes match the frozen integrated v2 sources. The data bundle includes the empirical inputs required by the numerical workflow.
+
+Expected SHA-256 of `coffee_cocoa_empirical_inputs_v2.zip`:
+
+```text
+ea0b85e3a7baa4ca95cb1df530a33bbe94c0e2513e259f562de98b95ebc4b1ed
+```
+
+Place the downloaded input ZIP in the code directory. From that directory, using a Python environment meeting the requirements above, verify the ZIP and extract it into a new `empirical_inputs` directory:
+
+```bash
+python -c "import hashlib,pathlib; p=pathlib.Path('coffee_cocoa_empirical_inputs_v2.zip'); actual=hashlib.sha256(p.read_bytes()).hexdigest(); print(actual); raise SystemExit(0 if actual=='ea0b85e3a7baa4ca95cb1df530a33bbe94c0e2513e259f562de98b95ebc4b1ed' else 'SHA-256 mismatch')"
+python -m zipfile -e coffee_cocoa_empirical_inputs_v2.zip empirical_inputs
+```
+
+Supply `empirical_inputs/raw_inputs`, the directory containing `source_manifest.json`, to the workflow below. The analysis command verifies the individual input files before calculation.
+
 ## Portable numerical workflow
 
 Provide either a manifested raw-source directory or a prepared input directory. The input contract is described in [docs/INPUT_DATA.md](docs/INPUT_DATA.md).
 
 ```bash
-python -I -B -X utf8 -u run_analysis.py --input-dir /path/to/inputs --output-dir /path/to/results
+python -I -B -X utf8 -u run_analysis.py --input-dir empirical_inputs/raw_inputs --output-dir results/production
 ```
 
 The default runs 400 response replicates for each of the original three generated designs and 100 independently generated designs with 40 response replicates per condition. The two benchmark families are reported separately. The command also exports the numerical manuscript tables, eight plot-data tables and Supplementary Data S1. It does not render figures.
@@ -58,4 +79,4 @@ python -B -m unittest discover -s tests
 python -B -m unittest discover -s coffee_cocoa_core/panel_analysis/tests
 ```
 
-The included fixtures contain generated data. Input data are distributed separately from code. No data archive, DOI, public repository URL or publication status is implied by this code distribution. A repository license has not been assigned in this package.
+The included fixtures contain generated data. The preserved empirical inputs are distributed separately through the release linked above. An archival DOI and repository reuse license have not yet been assigned.

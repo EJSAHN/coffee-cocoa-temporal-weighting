@@ -4,7 +4,7 @@
   "sha256": {
     ".gitignore": "4ed578b0742092c9b95ccc8197d17d5488def22f5e314de0ec33904bf26e9edb",
     "CHANGELOG.md": "2f0c60a5749f1ff6eb99d6cbe612d222266989a3da59afa6bc01bde6acd92d9d",
-    "README.md": "706f8fd6f2e1f360f831b119b02d3e3665a2d1792c2401ebe482de9c67ae7532",
+    "README.md": "608a901e14878fbca49ea6131ee42ecd2d074038150f06d8ed593e1ef24af9ce",
     "VALIDATION.md": "ddc771fdec9c9bd32bd9cd1846271e42dace155e407f59b35ebeec3165b43e94",
     "coffee_cocoa_core/__init__.py": "ff5846ee5aba181a8d2281754e59b2501762a35f7f8e86b3ad718d783485c179",
     "coffee_cocoa_core/benchmark/__init__.py": "1ff94fedb4deef97e461484c30ea1b976a3bf3a4b64a1dc4f01f67afdc80c3f7",
@@ -45,7 +45,7 @@
     "coffee_cocoa_core/temporal/weights.py": "fa703c53228dfc0bdffe920f3707904fe8eda3f027f38ea82066c53cc2714a6a",
     "coffee_cocoa_core/workflow_v2.py": "03d5e333b37301ca70cc577794619000a778a5c7211a0e10443a3f22b7d0ebaa",
     "diagnose_weights.py": "190e3e9ec306acb2b2c63a1cf5b73a0205ead8b10f449763898a093efca211c3",
-    "docs/INPUT_DATA.md": "4ac50940f5d1bb923ec193750162a19d8424e8b18d89dcc414135458369455d5",
+    "docs/INPUT_DATA.md": "f5ab9c6a518ad41bcb6cb233ca80ae667c6c99278ec144c7bf4e7da60f42cef8",
     "docs/METHODS.md": "379e477ad19985492ea67ec19c26600c0392c8404f1e123f3083018d175290ef",
     "docs/SOURCES.md": "7e99cfc01b63a39a77bc48a559d5d56b4479844b5f27d36b997cb9504bce4d4b",
     "expanded_benchmark.py": "27b2c8619ac1d54c9fff70999da15d33fd88850310abe860af0a24f55ba4e996",

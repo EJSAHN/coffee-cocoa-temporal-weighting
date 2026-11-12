@@ -4,6 +4,19 @@ The command accepts either a raw canonical directory containing `source_manifest
 
 The data bundle must be obtained separately. No download service or access credentials are required by the analysis command. The original production extraction, climate extraction, cohort, geographic mapping, and event membership are substantive inputs; completed model estimates are not accepted in their place.
 
+## Published input archive
+
+Download [`coffee_cocoa_empirical_inputs_v2.zip`](https://github.com/EJSAHN/coffee-cocoa-temporal-weighting/releases/download/v2.0.0/coffee_cocoa_empirical_inputs_v2.zip) from [release v2.0.0](https://github.com/EJSAHN/coffee-cocoa-temporal-weighting/releases/tag/v2.0.0).
+
+- Size: 38,759,041 bytes.
+- SHA-256: `ea0b85e3a7baa4ca95cb1df530a33bbe94c0e2513e259f562de98b95ebc4b1ed`.
+- Layout after extraction: `raw_inputs/source_manifest.json` and the ten files listed below, with event-design files under `raw_inputs/legacy/`.
+- Code snapshot: `v2.0.0`, commit `fadb680320df628e449d1f2e45292d40e0b62462`.
+
+The archive uses portable ZIP paths. Every source file is byte-identical to the corresponding frozen integrated v2 input. Repacking the ZIP for portable paths changed the outer ZIP hash without changing any member file.
+
+See the [README](../README.md#published-code-and-empirical-inputs) for archive verification, extraction and execution commands. Pass the extracted `raw_inputs` directory to `--input-dir`.
+
 ## Raw canonical directory
 
 `source_manifest.json` contains a `sha256` object mapping each relative file name below to its lowercase SHA256 digest. Paths use forward slashes. A manifest does not hash itself. All ten required files must be present and must match their hashes.

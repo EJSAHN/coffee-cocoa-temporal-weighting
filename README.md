@@ -79,4 +79,10 @@ python -B -m unittest discover -s tests
 python -B -m unittest discover -s coffee_cocoa_core/panel_analysis/tests
 ```
 
-The included fixtures contain generated data. The preserved empirical inputs are distributed separately through the release linked above. An archival DOI and repository reuse license have not yet been assigned.
+The included fixtures contain generated data. The preserved empirical inputs are distributed separately through the release linked above.
+
+The original source code developed for this project, including the code released as v2.0.0, is dedicated to the public domain under CC0 1.0 Universal. See [LICENSE](LICENSE) for the full terms.
+
+This dedication applies to the project's original source code. IBGE and TerraClimate data, third-party software, and other third-party materials remain subject to their respective licenses and terms of use.
+
+An archival DOI has not yet been assigned.
